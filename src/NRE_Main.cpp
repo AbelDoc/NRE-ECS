@@ -7,7 +7,14 @@
      * @copyright CC-BY-NC-SA
      */
 
+    #include "Header/NRE_ECS.hpp"
+
+    using namespace NRE::Utility;
+    using namespace NRE::ECS;
+
     int main(int, char**) {
+
+        Singleton<EntityManager>::get();
 
         return 0;
     }
