@@ -80,7 +80,7 @@
                          * Id getter
                          * @return the id
                          */
-                        uint64 const& getId() const;
+                        uint64 getId() const;
                         /**
                          * Index getter
                          * @return the id's index
