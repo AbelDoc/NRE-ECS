@@ -19,7 +19,7 @@
                 inline Id::Id(uint32 index, uint32 version) : id(static_cast <uint64> (index) | static_cast <uint64> (version) << 32UL) {
                 }
 
-                inline uint64 const& Id::getId() const {
+                inline uint64 Id::getId() const {
                     return id;
                 }
 
