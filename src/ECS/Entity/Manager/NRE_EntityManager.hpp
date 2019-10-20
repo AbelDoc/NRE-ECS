@@ -51,7 +51,7 @@
                     /** Shortcut to hide the bitset used for component masking */
                     typedef std::bitset<AbstractComponent::MAX_COMPONENTS> ComponentMask;
                 private:    //Fields
-                    Utility::Vector<AbstractAllocator*> componentPools;         /**< The manager component's allocators */
+                    Utility::Vector<AbstractAllocator*> componentPools;     /**< The manager component's allocators */
                     Utility::Vector<IComponentHelper*> componentsHelper;    /**< The manager component's helpers */
                     Utility::Vector<ComponentMask> entityComponentMask;     /**< The manager entities component mask */
                     Utility::Vector<uint32> entityVersion;                  /**< The manager existing entity's version */

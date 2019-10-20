@@ -39,11 +39,12 @@
                 assert(T::getCategory() < MAX_SYSTEM);
                 mask[T::getCategory()] = true;
                 if (systems.getSize() <= T::getCategory()) {
-                    systems.resize(T::getCategory());
-                    systems.emplaceBack(std::make_unique<T>(std::forward<Args>(args)...));
-                } else {
-                    systems[T::getCategory()] = std::make_unique<T>(std::forward<Args>(args)...);
+                    systems.reserve(T::getCategory());
+                    for (std::size_t i = systems.getSize(); i <= T::getCategory(); i++) {
+                        systems.emplaceBack();
+                    }
                 }
+                systems[T::getCategory()] = std::make_unique<T>(std::forward<Args>(args)...);
             }
 
             template <class T>

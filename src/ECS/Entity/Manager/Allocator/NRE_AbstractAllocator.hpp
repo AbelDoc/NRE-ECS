@@ -26,6 +26,12 @@
              */
             class AbstractAllocator {
                 public : // Methods
+                    //## Constructor ##//
+                        /**
+                         * Default constructor
+                         */
+                        AbstractAllocator() = default;
+                
                     //## Copy-Constructor ##//
                         /**
                          * Copy forbidden

@@ -34,6 +34,12 @@
                     typedef std::size_t Category;
 
                 public:    // Methods
+                    //## Constructor ##//
+                        /**
+                         * Default constructor
+                         */
+                        AbstractSystem() = default;
+                
                     //## Copy-Constructor ##//
                         /**
                          * Copy forbidden

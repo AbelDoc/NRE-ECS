@@ -35,12 +35,12 @@
 
             template <class T, std::size_t ChunkSize>
             inline T* PoolAllocator<T, ChunkSize>::get(std::size_t index) {
-                return chunks[index / ChunkSize][(index % ChunkSize) * sizeof(T)];
+                return &chunks[index / ChunkSize][(index % ChunkSize) * sizeof(T)];
             }
 
             template <class T, std::size_t ChunkSize>
             inline const T* PoolAllocator<T, ChunkSize>::get(std::size_t index) const {
-                return chunks[index / ChunkSize][(index % ChunkSize) * sizeof(T)];
+                return &chunks[index / ChunkSize][(index % ChunkSize) * sizeof(T)];
             }
 
             template <class T, std::size_t ChunkSize>
