@@ -56,10 +56,7 @@
                     return false;
                 }
                 PoolAllocator<T>* pool = static_cast <PoolAllocator<T>*> (componentPools[category]);
-                if (!pool || !entityComponentMask[id.getIndex()][category]) {
-                    return false;
-                }
-                return true;
+                return !(!pool || !entityComponentMask[id.getIndex()][category]);
             }
 
             template <typename T, typename>
