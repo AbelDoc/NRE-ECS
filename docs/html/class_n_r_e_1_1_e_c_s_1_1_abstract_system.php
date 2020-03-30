@@ -163,7 +163,7 @@ Static Public Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>&lt; Shortcut to hide the Category type </p>
+<p>Shortcut to hide the Category type </p>
 
 </div>
 </div>

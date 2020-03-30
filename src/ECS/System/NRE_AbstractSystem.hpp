@@ -30,7 +30,7 @@
              */
             class AbstractSystem {
                 public:     //Fields
-                    /**< Shortcut to hide the Category type */
+                    /** Shortcut to hide the Category type */
                     typedef std::size_t Category;
 
                 public:    // Methods
