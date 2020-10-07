@@ -9,7 +9,7 @@
 
      #pragma once
 
-     #include <Header/NRE_Utility.hpp>
+     #include <Header/NRE_Core.hpp>
      #include "NRE_AbstractAllocator.hpp"
 
      /**
@@ -30,7 +30,7 @@
             template <class T, std::size_t ChunkSize = 4096>
             class PoolAllocator : public AbstractAllocator {
                 private :   // Fields
-                    Utility::Vector<T*> chunks;     /**< The allocator data chunks */
+                    Core::Vector<T*> chunks;     /**< The allocator data chunks */
                     std::size_t size;               /**< The allocator current size */
                     std::size_t capacity;           /**< The allocator current capacity */
 

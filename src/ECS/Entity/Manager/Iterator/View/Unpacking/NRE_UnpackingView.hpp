@@ -150,14 +150,14 @@
                          * @return an iterator on the end
                          */
                         Iterator end() {
-                            return Iterator(mask, static_cast <uint32> (Utility::Singleton<EntityManager>::get().getCapacity()), unpacker);
+                            return Iterator(mask, static_cast <uint32> (Core::Singleton<EntityManager>::get().getCapacity()), unpacker);
                         }
                         /**
                          * Const End iterator
                          * @return an iterator on the end
                          */
                         Iterator const end() const {
-                            return Iterator(mask, static_cast <uint32> (Utility::Singleton<EntityManager>::get().getCapacity()), unpacker);
+                            return Iterator(mask, static_cast <uint32> (Core::Singleton<EntityManager>::get().getCapacity()), unpacker);
                         }
 
             };

@@ -9,7 +9,7 @@
 
     #include "Header/NRE_ECS.hpp"
 
-    using namespace NRE::Utility;
+    using namespace NRE::Core;
     using namespace NRE::ECS;
     
     struct TestComponent {

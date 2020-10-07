@@ -16,31 +16,31 @@
 
             template <class T>
             inline bool ComponentHandle<T>::isValid() const {
-                return Utility::Singleton<EntityManager>::get().isValid(id) && Utility::Singleton<EntityManager>::get().hasComponent<T>(id);
+                return Core::Singleton<EntityManager>::get().isValid(id) && Core::Singleton<EntityManager>::get().hasComponent<T>(id);
             }
 
             template <class T>
             inline T* ComponentHandle<T>::get() {
                 assert(isValid());
-                return Utility::Singleton<EntityManager>::get().getComponentPtr<T>(id);
+                return Core::Singleton<EntityManager>::get().getComponentPtr<T>(id);
             }
 
             template <class T>
             inline const T* ComponentHandle<T>::get() const {
                 assert(isValid());
-                return Utility::Singleton<EntityManager>::get().getComponentPtr<T>(id);
+                return Core::Singleton<EntityManager>::get().getComponentPtr<T>(id);
             }
 
             template <class T>
             inline Entity ComponentHandle<T>::getEntity() {
                 assert(isValid());
-                return Utility::Singleton<EntityManager>::get().get(id);
+                return Core::Singleton<EntityManager>::get().get(id);
             }
 
             template <class T>
             inline void ComponentHandle<T>::remove() {
                 assert(isValid());
-                Utility::Singleton<EntityManager>::get().remove<T>(id);
+                Core::Singleton<EntityManager>::get().remove<T>(id);
             }
 
             template <class T>

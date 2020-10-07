@@ -14,7 +14,7 @@
     #include <bitset>
     #include <memory>
 
-    #include <Header/NRE_Utility.hpp>
+    #include <Header/NRE_Core.hpp>
 
     #include "../NRE_System.hpp"
 
@@ -33,12 +33,12 @@
              * @class SystemManager
              * @brief Manage system storing and update
              */
-            class SystemManager : public Utility::Singleton<SystemManager> {
-                friend Utility::Singleton<SystemManager>;
+            class SystemManager : public Core::Singleton<SystemManager> {
+                friend Core::Singleton<SystemManager>;
                 private:    //Fields
                     constexpr static int MAX_SYSTEM = 32;                       /**< The max number of systems */
                     bool initialized;                                           /**< Tell if the manager is initialized */
-                    Utility::Vector<std::unique_ptr<AbstractSystem>> systems;   /**< The manager's systems */
+                    Core::Vector<std::unique_ptr<AbstractSystem>> systems;   /**< The manager's systems */
                     std::bitset<MAX_SYSTEM> mask;                               /**< The bitset to tell if a systems has been stored */
 
                 public:    // Methods

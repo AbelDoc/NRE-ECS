@@ -23,7 +23,7 @@
                 return id.getIndex() < entityVersion.getSize() && entityVersion[id.getIndex()] == id.getVersion();
             }
 
-            inline Utility::Vector<uint32>& EntityManager::getFreeList() {
+            inline Core::Vector<uint32>& EntityManager::getFreeList() {
                 return freeList;
             }
 

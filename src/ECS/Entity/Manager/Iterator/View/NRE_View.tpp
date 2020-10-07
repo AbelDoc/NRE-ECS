@@ -31,12 +31,12 @@
 
             template <bool All>
             inline typename View<All>::Iterator View<All>::end() {
-                return View<All>::Iterator(mask, static_cast <uint32> (Utility::Singleton<EntityManager>::get().getCapacity()));
+                return View<All>::Iterator(mask, static_cast <uint32> (Core::Singleton<EntityManager>::get().getCapacity()));
             }
 
             template <bool All>
             inline typename View<All>::Iterator const View<All>::end() const {
-                return View<All>::Iterator(mask, static_cast <uint32> (Utility::Singleton<EntityManager>::get().getCapacity()));
+                return View<All>::Iterator(mask, static_cast <uint32> (Core::Singleton<EntityManager>::get().getCapacity()));
             }
 
         }

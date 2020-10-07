@@ -55,7 +55,7 @@
 
             template <class T>
             inline T* SystemManager::get() {
-                return Utility::Singleton<SystemManager>::get().getSystem<T>();
+                return Core::Singleton<SystemManager>::get().getSystem<T>();
             }
 
         }

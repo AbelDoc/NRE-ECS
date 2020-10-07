@@ -20,7 +20,7 @@
             }
 
             inline bool Entity::isValid() const {
-                return Utility::Singleton<EntityManager>::get().isValid(id);
+                return Core::Singleton<EntityManager>::get().isValid(id);
             }
 
             inline Id const& Entity::getId() const {
@@ -28,7 +28,7 @@
             }
 
             inline std::bitset<AbstractComponent::MAX_COMPONENTS> Entity::getComponentMask() const {
-                return Utility::Singleton<EntityManager>::get().getComponentMask(id);
+                return Core::Singleton<EntityManager>::get().getComponentMask(id);
             }
 
             inline void Entity::invalidate() {
@@ -37,7 +37,7 @@
 
             inline void Entity::destroy() {
                 assert(isValid());
-                Utility::Singleton<EntityManager>::get().destroy(id);
+                Core::Singleton<EntityManager>::get().destroy(id);
                 invalidate();
             }
 
@@ -61,37 +61,37 @@
             template <class T>
             inline bool Entity::hasComponent() const {
                 assert(isValid());
-                return Utility::Singleton<EntityManager>::get().hasComponent<T>(id);
+                return Core::Singleton<EntityManager>::get().hasComponent<T>(id);
             }
 
             template <typename T, typename>
             inline ComponentHandle<T> Entity::getComponent() {
                 assert(isValid());
-                return Utility::Singleton<EntityManager>::get().getComponent<T>(id);
+                return Core::Singleton<EntityManager>::get().getComponent<T>(id);
             }
 
             template <typename T, typename>
             inline ComponentHandle<T> Entity::getComponent() const {
                 assert(isValid());
-                return Utility::Singleton<EntityManager>::get().getComponent<const T>(id);
+                return Core::Singleton<EntityManager>::get().getComponent<const T>(id);
             }
 
             template <class ... Components>
             inline std::tuple<ComponentHandle<Components>...> Entity::getComponents() {
                 assert(isValid());
-                return Utility::Singleton<EntityManager>::get().getComponents<Components...>(id);
+                return Core::Singleton<EntityManager>::get().getComponents<Components...>(id);
             }
 
             template <class ... Components>
             inline std::tuple<ComponentHandle<const Components>...> Entity::getComponents() const {
                 assert(isValid());
-                return Utility::Singleton<EntityManager>::get().getComponents<const Components...>(id);
+                return Core::Singleton<EntityManager>::get().getComponents<const Components...>(id);
             }
 
             template <class T, class ... Args>
             inline ComponentHandle<T> Entity::assign(Args && ... args) {
                 assert(isValid());
-                return Utility::Singleton<EntityManager>::get().assign<T>(id, std::forward<Args>(args) ...);
+                return Core::Singleton<EntityManager>::get().assign<T>(id, std::forward<Args>(args) ...);
             }
 
             template <class T, class ... Args>
@@ -109,13 +109,13 @@
             template <class T>
             inline void Entity::remove() {
                 assert(isValid() && hasComponent<T>());
-                Utility::Singleton<EntityManager>::get().remove<T>(id);
+                Core::Singleton<EntityManager>::get().remove<T>(id);
             }
 
             template <class T, class ... Args>
             inline void Entity::unpack(ComponentHandle<T>& handle, ComponentHandle<Args> & ... args) {
                 assert(isValid());
-                Utility::Singleton<EntityManager>::get().unpack(id, handle, args ...);
+                Core::Singleton<EntityManager>::get().unpack(id, handle, args ...);
             }
 
         }

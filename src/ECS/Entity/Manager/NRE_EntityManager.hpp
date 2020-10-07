@@ -45,17 +45,17 @@
              * @class EntityManager
              * @brief Manage Entity creation & component assignment
              */
-            class EntityManager : public Utility::Singleton<EntityManager> {
-                friend Utility::Singleton<EntityManager>;
+            class EntityManager : public Core::Singleton<EntityManager> {
+                friend Core::Singleton<EntityManager>;
                 public:
                     /** Shortcut to hide the bitset used for component masking */
                     typedef std::bitset<AbstractComponent::MAX_COMPONENTS> ComponentMask;
                 private:    //Fields
-                    Utility::Vector<AbstractAllocator*> componentPools;     /**< The manager component's allocators */
-                    Utility::Vector<IComponentHelper*> componentsHelper;    /**< The manager component's helpers */
-                    Utility::Vector<ComponentMask> entityComponentMask;     /**< The manager entities component mask */
-                    Utility::Vector<uint32> entityVersion;                  /**< The manager existing entity's version */
-                    Utility::Vector<uint32> freeList;                       /**< The manager entity free list */
+                    Core::Vector<AbstractAllocator*> componentPools;     /**< The manager component's allocators */
+                    Core::Vector<IComponentHelper*> componentsHelper;    /**< The manager component's helpers */
+                    Core::Vector<ComponentMask> entityComponentMask;     /**< The manager entities component mask */
+                    Core::Vector<uint32> entityVersion;                  /**< The manager existing entity's version */
+                    Core::Vector<uint32> freeList;                       /**< The manager entity free list */
                     uint32 counter;                                         /**< The manager current index counter */
 
                 public:     //Fields
@@ -75,7 +75,7 @@
                          * FreeList getter
                          * @return the manager's free list
                          */
-                        Utility::Vector<uint32>& getFreeList();
+                        Core::Vector<uint32>& getFreeList();
                         /**
                          * Component mask getter
                          * @param  index the mask's index
